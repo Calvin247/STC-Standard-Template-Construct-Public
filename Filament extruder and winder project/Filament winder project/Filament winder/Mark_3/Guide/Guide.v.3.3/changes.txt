@@ -1,0 +1,5 @@
+broadened for linear bearings
+added 3rd hole for prass pipe guide
+
+v.3.3
+extra length for bearing placement +5mm
