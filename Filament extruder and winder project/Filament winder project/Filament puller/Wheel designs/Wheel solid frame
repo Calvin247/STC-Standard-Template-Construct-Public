@@ -1,0 +1,94 @@
+
+A = 180;        //Large  circle resolution
+
+
+
+
+
+
+difference(){
+union(){    
+translate([0,0,17.5]) cylinder(h = 30, d=70, $fn = A, center = true);
+    
+//translate([0,0,1]) cylinder(h = 3, d=62, $fn = A, center = true);
+//translate([0,0,34]) cylinder(h = 3, d=62, $fn = A, center = true);   
+    
+    
+   
+    
+}    
+    
+difference(){
+//outer frame    
+translate([0,0,17.5]) cylinder(h = 31, d=71, $fn = A, center = true);
+
+translate([0,0,17.5]) cylinder(h = 32, d=62, $fn = A, center = true);
+
+}
+
+difference(){
+//gruves    
+for(i=[0:7]) rotate([0,0,i*45/2]) translate([0,0,17.5]) cube([3,62,30], center = true);
+    
+translate([0,0,17.5]) cylinder(h = 32, d=55, $fn = A, center = true);
+
+}
+
+
+translate([0,0,17.5]) cylinder(h = 60, d=48, $fn = A, center = true);
+
+
+
+}
+
+
+
+difference(){
+union(){
+translate([0,0,30]) cylinder(h = 5, d2=62, d1=55, $fn = A, center = true); 
+    
+translate([0,0,5]) cylinder(h = 5, d1=62, d2=55, $fn = A, center = true);     
+
+
+
+
+}
+
+translate([0,0,17.5]) cylinder(h = 60, d=48, $fn = A, center = true);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+//Bottom plate
+//translate([0,0,2]) cylinder(h = 5, d=55, $fn = A, center = true); 
+
+
+difference(){
+union(){
+//translate([0,0,1.5]) rotate([0,0,0]) cylinder(h = 4, d=55, $fn = 90, center = true); 
+    
+translate([0,0,11]) rotate([0,0,0]) cylinder(h = 17, d1=39, d2=16, $fn = 90, center = true); 
+    
+
+for(i=[0:3]) rotate([0,0,i*45]) translate([0,0,17.5]) cube([3,50,30], center = true);    
+    
+    
+}  
+
+translate([0,0,1.5]) rotate([0,0,0]) cylinder(h = 40, d=8.3, $fn = 90, center = true); 
+
+
+//top upside down cone elimination
+translate([0,0,25.65]) rotate([0,0,0]) cylinder(h = 13.75, d2=48, d1=17, $fn = 90, center = true);
+
+
+}
